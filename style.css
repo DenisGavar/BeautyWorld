@@ -133,11 +133,10 @@ a {
 
 .hero {
 	max-width: 540px;
-    z-index: 3;
 }
 
-header__hero {
-
+.header__hero {
+    z-index: 2;
 }
 
 .hero__title {
@@ -230,7 +229,6 @@ header__hero {
 	position: absolute;
     top: 81px;
 	right: 93px;
-    z-index: 2;
 }
 
 
