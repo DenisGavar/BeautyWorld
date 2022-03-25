@@ -6,68 +6,8 @@
 
 
 
-.header-text {
-	max-width: 540px;
-    z-index: 3;
-}
 
-.header-text-header {
-	font-size: 48px;
-    font-weight: 600;
-	line-height: 59px;
-	margin-block-start: 0px;
-	margin-block-end: 0px;	
-}
 
-.header-text-text {
-	font-size: 20px;
-    font-weight: 400;
-	margin-block-start: 17px;
-	margin-block-end: 59px;
-}
-
-.social {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.social li:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.ellipse {
-    position: absolute;
-	width: 472px;
-    height: 472px;
-    border-radius: 50%;
-    background-color: #FB9475;
-    top: 229px;
-	right: 93px;
-}
-
-.girl {
-	position: absolute;
-    top: 81px;
-	right: 93px;
-    z-index: 2;
-}
-
-.btn {
-	width: 203px;
-	height: 48px;
-	background-color: #FB9475;
-	border-radius: 24px;
-	border: none;
-	text-align: center;
-	font-size: 14px;
-    font-weight: 500;
-	color: #FFFFFF;
-}
 
 /* ------ Main ------- */
 
