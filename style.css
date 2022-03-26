@@ -428,6 +428,86 @@ a {
 }
 
 
+.tabs {
+	
+}
+
+.tabs__tab-input {
+	display: none;  
+}
+
+.tabs__tab-name {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    transition: color 0.15s ease-in-out;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px; 
+}
+
+.tabs>.tabs__tab-name:not(:last-of-type) {
+    margin-right: 28px;
+}
+
+.tabs__tab-input:checked+.tabs__tab-name {
+	color: #00BF78;
+	cursor: default;
+}
+
+.tabs__box {
+    display: none;
+    padding-top: 50px;
+}
+
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2,
+#tab-btn-3:checked~#content-3,
+#tab-btn-4:checked~#content-4,
+#tab-btn-5:checked~#content-5,
+#tab-btn-6:checked~#content-6 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 126px;		
+}
+
+.tabs__line {
+	position: relative;
+    max-width: 445px;
+	width: 100%;
+}	
+
+.tabs__header{
+    position: relative;	
+ 	font-size: 18px;
+    font-weight: 500;
+	line-height: 22px;
+	margin-block-start: 0px;
+	margin-block-end: 8px;	
+}
+
+.tabs__text{
+    position: relative;	
+ 	font-size: 14px;
+    font-weight: 400;
+	line-height: 17px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;	
+}
+
+.tabs__price{
+    position: absolute;	
+ 	font-size: 20px;
+    font-weight: 600;
+	line-height: 24px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;	
+	color: #00BF78;
+	top: 0px;
+	right: 1px;
+}
 
 
 
