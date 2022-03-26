@@ -32,7 +32,6 @@ a {
 .container {
     max-width: 1110px;
     margin: auto;
-    padding: 0 15px;
 }
 
 /* ------ Header ------- */
@@ -40,7 +39,8 @@ a {
     background: #F8F6F7 url('./images/header-background.png');
 	overflow: hidden;
 	flex-shrink: 0;
-	
+    margin-bottom: 120px;
+    	
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: auto contain;
@@ -49,13 +49,12 @@ a {
 .header__container {
     position: relative;
     padding: 30px 0 136px;
+    margin-bottom: 100px;
 }
 
 .header__top {
 	display: flex;
 	justify-content: space-between;
-    margin-bottom: 120px;
-
 }
 
 .logo {
@@ -237,12 +236,20 @@ a {
 }
 
 .section {
+    position: relative;
+    padding: 0 0 100px;
+}
 
+.section_bg-light-grey {
+    background-color: #F8F6F7;
 }
 
 .section__container {
-    position: relative;
-    padding: 100px 0 0;
+    padding: 0 0;
+}
+
+.section__container_top-bottom-paddings-80 {
+    padding: 80px 0;
 }
 
 .section__header {
@@ -255,6 +262,14 @@ a {
 	line-height: 59px;
 	margin-block-start: 0px;
 	margin-block-end: 32px;
+}
+
+.section__subtitle {
+	font-size: 16px;
+    font-weight: 400;
+	line-height: 20px;
+	margin-block-start: 0px;
+	margin-block-end: 24px;    
 }
 
 .section__inner {
@@ -339,7 +354,7 @@ a {
     font-weight: 500;
     position: absolute;
     text-align: center;
-    z-index: 3;
+    z-index: 4;
     top: 168px;
     left: 0;
     right: 0;
@@ -375,6 +390,8 @@ a {
 	max-width: 350px;
     height: 100%;
     flex: 1 1 auto;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .frame_center {
@@ -385,8 +402,45 @@ a {
     padding: 0 35px;
 }
 
+.frame_max-width-255 {
+    max-width: 255px;
+}
+
 .frame__img {
 	position: relative;
+    border-radius: 8px;
+    line-height: 0;
+}
+
+.frame__img_cursor-pointer {
+    cursor: pointer;
+}
+
+.frame__img:hover:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: #000;
+    opacity: 0.5;    
+}
+
+.frame__img:hover:before {
+    content: "Записаться к мастеру";
+    position: absolute;
+    text-align: center;
+    max-width: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	font-size: 14px;
+    font-weight: 500;
+	line-height: 17px;
+    color: #fff;
+    z-index: 3;
 }
 
 .frame__header {
@@ -427,6 +481,26 @@ a {
     margin-block-end: 16px;    
 }
 
+.frame__text_font-size-14 {
+	font-size: 14px;
+}
+
+.frame__text_line-height-17 {
+	line-height: 17px;
+}
+
+.frame__text_margin-block-end-20 {
+    margin-block-end: 20px;    
+}
+
+.frame__subtext {
+    max-width: 349px;
+	font-size: 12px;
+    font-weight: 300;
+	line-height: 15px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;    
+}
 
 .tabs {
 	
