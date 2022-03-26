@@ -15,7 +15,7 @@
     <div class="wrapper">
 
 		<header class="header">
-			<div class="container">
+			<div class="container header__container">
 
 				<!-- #mobile-menu-btn для обращения к кнопке из JS -->
 				<!--
@@ -86,37 +86,27 @@
 		<main class="main">
 			
 			<!-- О салоне -->
-			<section class="section">
-				<div class="container">
+			<section id="about" class="section">
+				<div class="container section__container">
 
 					<div class="section__header">
-						<h2 class="section__title">Title</h2>
-
-						<div class="section__actions">
-							<button></button>
-						</div>
+						<p class="section__title">О салоне</h2>
 					</div>
 
-					<div class="section__inner">
-						<div class="row">
-							<div class="col">
-								<div class="popular-service">
-								...
-								</div>
-							</div>
-
-							<div class="col">
-								<div class="popular-service">
-								...
-								</div>
-							</div>
-
-							<div class="col">
-								<div class="popular-service">
-								...
-								</div>
-							</div>
+					<div class="about-inner section__inner">
+						
+						<div class="about-inner__text">
+							<p class="about-inner__subtitle">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
+							<p class="about-inner__description">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму, а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>						
+							<a href="#" class="about-inner__link">Развернуть</a>
 						</div>
+
+						<button type="button" class="about-inner__video">
+							<div class="about-inner__video-overlay"></div>
+							<img class="about-inner__video-img" src="./images/video-preview.png" alt="video"></img>
+						</button>
+
+
 					</div>
 
 				</div>
@@ -248,9 +238,7 @@
 				<div class="about">
 					<div class="about-text">
 						<p class="about-text-header">О салоне</p>
-						<p class="about-text-text">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
-						<p class="about-text-description">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму, а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>						
-						<a href="#">Развернуть</a>
+
 					</div>
 					<div class="video-preview">
 						<img src="./images/video-preview.png" alt="video-preview">
@@ -490,21 +478,22 @@
         </main>
 
         <footer class="footer">
-            <div class="container">
+            <div class="container footer__container">
                 				
 				<div class="copyright">
-					<p>© 2020 «Море красоты»</p>
-					<a href="#">Политика конфиденциальности</a>
+					<p class="copyright__text">© 2020 «Море красоты»</p>
+					<a href="#" class="copyright__link">Политика конфиденциальности</a>
 				</div>
 				
-				<div class="footer-navigation">
-					<ul>
-						<li><a href="#">Услуги и цены</a></li>
-						<li><a href="#">Мастера</a></li>
-						<li><a href="#">Наши работы</a></li>
-						<li><a href="#">Контакты</a></li>
-					   </ul>
-				</div>
+				<nav class="navigation footer__nav">
+					<ul class="navigation__list">
+						<li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
+						<li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
+						<li class="navigation__item"><a href="#portfolio" class="navigation__link">Наши работы</a></li>
+						<li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+						<li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
+					</ul>
+				</nav>
 				
             </div>
         </footer>

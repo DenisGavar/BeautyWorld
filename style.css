@@ -46,7 +46,7 @@ a {
 	background-size: auto contain;
 }
 
-.header .container {
+.header__container {
     position: relative;
     padding: 30px 0 136px;
 }
@@ -55,10 +55,7 @@ a {
 	display: flex;
 	justify-content: space-between;
     margin-bottom: 120px;
-    /*
-    max-height: 45px;
-    align-items: baseline;
-    */
+
 }
 
 .logo {
@@ -239,10 +236,142 @@ a {
     flex: 1;
 }
 
-.main .container {
-    position: relative;
-    padding: 30px 0 0;
+.section {
+
 }
+
+.section__container {
+    position: relative;
+    padding: 100px 15px 0;
+}
+
+.section__header {
+
+}
+
+.section__title {
+	font-size: 48px;
+    font-weight: 700;
+	line-height: 59px;
+	margin-block-start: 0px;
+	margin-block-end: 32px;
+}
+
+.section__inner {
+    position: relative;  
+}
+
+.about-inner {
+
+}
+
+.about-inner__text {
+	max-width: 540px;
+    position: relative;
+}
+
+.about-inner__subtitle {
+	font-size: 20px;
+    font-weight: 400;
+	line-height: 32px;
+    margin-block-start: 0px;
+	margin-block-end: 16px;
+}
+
+.about-inner__description {
+	font-size: 16px;
+    font-weight: 400;
+	line-height: 26px;
+	margin-block-start: 0px;
+	margin-block-end: 16px;
+}
+
+.about-inner__link {
+	text-decoration-line: none;
+	color: #278AFF;
+}
+
+.about-inner__video {
+    border-radius: 8px;
+    overflow: hidden;
+	position: absolute;
+ 	right: 0px;
+	bottom: 6px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    object-fit: cover;
+    padding: 0;
+}
+
+.about-inner__video:before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('./images/play-icon.svg') no-repeat center;
+    z-index: 3;
+    transition: 0.15s;
+}
+
+.about-inner__video:hover::before {
+    transform: scale(1.1) translateX(-45%);    
+}
+
+.about-inner__video-overlay {
+    background: #000;
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.about-inner__video-overlay:after {
+    content: 'Короткое видео о нас';
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+    top: 168px;
+    left: 0;
+    right: 0;
+    color: #fff;
+}
+
+.about-inner__video-img {
+    min-width: 297px;
+    max-width: 445px;
+    width: 100%;
+    height: 297px;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ------ Footer ------- */
 
@@ -250,4 +379,26 @@ a {
 	flex: 0;
 }
 
+.footer__container {
+    position: relative;
+    padding: 20px 0 20px;
+	display: flex;
+	justify-content: space-between;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+	align-items: center;
+}
 
+.copyright {
+
+}
+
+.copyright__text {
+
+}
+
+.copyright__link {
+	text-decoration-line: underline;
+	color: #278AFF;
+}
