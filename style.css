@@ -163,6 +163,8 @@ a {
     font-weight: 500;
 	color: #FFFFFF;
     padding: 10px 20px;
+    cursor: pointer;
+    transition: .15s color;
 }
 
 .btn_large {
@@ -170,6 +172,10 @@ a {
     font-size: 14px;
 	border-radius: 24px;
     padding: 17px 30px;
+}
+
+.btn:hover {
+	color: #00BF78;    
 }
 
 .social {
@@ -241,6 +247,7 @@ a {
 }
 
 .section_bg-light-grey {
+    background-clip: content-box;
     background-color: #F8F6F7;
 }
 
