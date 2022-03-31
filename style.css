@@ -24,7 +24,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 100%;
-	max-width: 1440px;
+	/*max-width: 1440px;*/
 	width: 100%;
 	margin: 0 auto
 }
@@ -32,6 +32,7 @@ a {
 .container {
     max-width: 1110px;
     margin: auto;
+    background-clip: content-box;
 }
 
 /* ------ Header ------- */
@@ -39,22 +40,22 @@ a {
     background: #F8F6F7 url('./images/header-background.png');
 	overflow: hidden;
 	flex-shrink: 0;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
     	
 	background-position: center;
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;*/
 	background-size: auto contain;
 }
 
 .header__container {
     position: relative;
     padding: 30px 0 136px;
-    margin-bottom: 100px;
 }
 
 .header__top {
 	display: flex;
 	justify-content: space-between;
+    margin-bottom: 120px;
 }
 
 .logo {
@@ -417,6 +418,18 @@ a {
 	position: relative;
     border-radius: 8px;
     line-height: 0;
+}
+
+.frame__img_height-300 {
+    height: 300px;
+}
+
+.frame__img_height-180 {
+    height: 180px;
+}
+
+.frame__img_height-48 {
+    height: 48px;
 }
 
 .frame__img_cursor-pointer {
