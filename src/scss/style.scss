@@ -7,9 +7,9 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-	max-width: 1440px;
+	/*max-width: 1440px;*/
 	width: 100%;
-	margin: 0 auto
+	margin: 0 auto;
 }
 
 /* ------ Header ------- */
@@ -17,21 +17,21 @@
     background: #F8F6F7 url('../images/header-background.png');
 	overflow: hidden;
 	flex-shrink: 0;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
     	
 	background-position: center;
-	background-repeat: no-repeat;
-	background-size: auto contain;
+	/*background-repeat: no-repeat;*/
+    background-size: auto contain;
 
     &__container {
         position: relative;
         padding: 30px 0 136px;
-        margin-bottom: 100px;
     }
 
     &__top {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 120px;
     }
 
     &__logo {
@@ -233,10 +233,31 @@
         &_top-bottom-paddings-80 {
             padding: 80px 0;
         }
+
+        &_top-bottom-paddings-40 {
+            padding: 40px 0;
+        }
+
+        &_max-width-1440 {
+            max-width: 1440px;
+        }
     }
 
     &__header {
+        margin: 0 auto;
 
+        &_max-width-1110 {
+            max-width: 1100px;
+        }
+
+        &_flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &_text-align {
+            text-align: center;
+        }
     }
 
     &__title {
@@ -245,6 +266,20 @@
         line-height: 59px;
         margin-block-start: 0px;
         margin-block-end: 32px;
+
+        &_margin-block-end-52 {
+            margin-block-end: 52px;          
+        }
+
+        &_margin-block-end-40 {
+            margin-block-end: 40px;          
+        }
+
+        &_small {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
     }
 
     &__subtitle {
@@ -269,10 +304,48 @@
             justify-content: flex-start;    
         }
 
+        &_center {
+            justify-content: center;
+            align-items: center;    
+        }
+
         &_column-gap-30 {
             column-gap: 30px;    
         }
+
+        &_opacity-35 {
+            opacity: 0.35;
+        }
     }
+
+    &__buttons {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__button {
+
+        max-width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        padding: 0 0;
+        border: none;
+        cursor: pointer;
+        transition: .15s;
+        background-color: #FFFFFF; 
+    
+        &:hover {
+            background-color: #F8F6F7;    
+        } 
+
+        &_left {
+
+        }
+
+        &_right {
+
+        }
+    }  
 
 }
 
@@ -308,7 +381,7 @@
         border-radius: 8px;
         overflow: hidden;
         position: absolute;
-         right: 0px;
+        right: 0px;
         bottom: 6px;
         border: none;
         outline: 0;
@@ -375,7 +448,7 @@
 	max-width: 350px;
     height: 100%;
     flex: 1 1 auto;
-    overflow: hidden;
+    /*overflow: hidden;*/
     object-fit: cover;
 
     &_center {
@@ -397,6 +470,18 @@
 
         &_cursor-pointer {
             cursor: pointer;
+        }
+
+        &_height-300 {
+            height: 300px;
+        }
+        
+        &_height-180 {
+            height: 180px;
+        }
+        
+        &_height-48 {
+            height: 48px;
         }
 
         &:hover:after {
@@ -425,6 +510,7 @@
             color: #fff;
             z-index: 3;
         }
+
     }
 
     &__header {
@@ -566,6 +652,49 @@
     display: flex;
     flex-wrap: wrap;
     gap: 36px 126px;		
+}
+
+.img-increase {
+	position: relative;
+	max-width: 338px;
+    height: 338px;
+    object-fit: cover;   
+    border-radius: 8px;
+    line-height: 0;
+    transition: 0.15s; 
+    cursor: pointer;  
+
+    &:hover {
+        transform: scale(1.1);    
+    }
+
+    &:hover:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background: #000 url('../images/search.png') no-repeat center;
+        opacity: 0.5;    
+    }
+
+    &:hover:before {
+        content: "Увеличить";
+        position: absolute;
+        text-align: center;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        color: #fff;
+        z-index: 3;
+    }
+
+
 }
 
 
