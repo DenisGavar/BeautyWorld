@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -45,12 +45,6 @@
 					</div>
 				</div>
 
-                <div class="hero header__hero">
-                    <h1 class="hero__title">Создай свой образ вместе с нами</h1>
-                    <p class="hero__subtitle">Идеальный образ за 60 минут</p>
-                    <button data-fancybox data-src="#request" class="btn btn_large">Записаться онлайн</button>
-                </div>
-
                 <ul class="social social_vertical header__social">
                     <li class="social__item">
                         <a href="#" class="social__link">
@@ -70,6 +64,12 @@
                         </a>
                     </li>
                 </ul>
+
+                <div class="hero header__hero">
+                    <h1 class="hero__title">Создай свой образ вместе с нами</h1>
+                    <p class="hero__subtitle">Идеальный образ за 60 минут</p>
+                    <button data-fancybox data-src="#request" class="btn btn_large">Записаться онлайн</button>
+                </div>
 
 				<div class="ellipse header__ellipse"></div>
 				
@@ -103,7 +103,6 @@
 							<div class="about-inner__video-overlay"></div>
 							<img class="about-inner__video-img" src="./images/video-preview.png" alt="video"></img>
 						</button>
-
 
 					</div>
 
@@ -452,15 +451,57 @@
 			</section>
 
 			<!-- Контакты -->
-			<section class="section section_bg-light-grey">
+			<section id="contacts" class="section section_bg-light-grey section_paddings-0">
 				<div class="container section__container section__container_top-bottom-paddings-40">
 
-					<div class="section__header">
-						<h2 class="section__title">Контакты</h2>
-					</div>
-
 					<div class="section__inner">
+						<div class="contacts section__contacts">
+							<div class="contacts__info">
+								<h2 class="contacts__title">Контакты</h2>
+								<address class="contacts__address">Томск, проспект Ленина, дом 13</address>
+								<a href="tel:84996861762" class="contacts__number">8 (499) 686-17-62</a>
+								<a href="mailto:info@more-krasoty.ru" class="contacts__link">info@more-krasoty.ru</a>
+								<p class="contacts__social-title">Мы в социальных сетях</p>
+								
+								<ul class="social">
+									<li class="social__item">
+										<a href="#" class="social__link">
+											<img src="./images/vk-icon.png" alt="Vk">
+										</a>
+									</li>
+				
+									<li class="social__item">
+										<a href="#" class="social__link">
+											<img src="./images/instagram-icon.png" alt="Instagram">
+										</a>
+									</li>
+				
+									<li class="social__item">
+										<a href="#" class="social__link">
+											<img src="./images/youtube-icon.png" alt="Youtube">
+										</a>
+									</li>
+								</ul>
+							</div>
 
+							<form class="form contacts__form">
+								<p class="form__title">Быстрая запись</p>
+								<p class="form__subtitle">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.</p>
+								<p>
+									<!-- TODO: pattern -->
+									<input type="text" class="form__name" placeholder="Ваше имя" />
+								</p>
+								<p>
+									<!-- TODO: pattern -->
+									<input type="tel" class="form__tel" placeholder="+7 (___) ___-__-__" />
+								</p>
+								<button class="btn btn_xlarge">Записаться</button>
+								<p class="form__footer">Нажимая на кнопку вы соглашаетесь с
+									<a href="#" class="form__link">обработкой персональных данных</a>
+								</p>
+							</form>
+			
+						</div>
 					</div>
 
 				</div>

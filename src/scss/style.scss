@@ -26,12 +26,25 @@
     &__container {
         position: relative;
         padding: 30px 0 136px;
+
+        @include _768 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }     
     }
 
     &__top {
         display: flex;
         justify-content: space-between;
         margin-bottom: 120px;
+
+        @include _768 {
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 0;
+        } 
     }
 
     &__logo {
@@ -58,6 +71,14 @@
         transform: translateY(-50%);
         margin: 0;
         padding: 0;
+
+        @include _768 {
+            position: relative;
+            left: 50%;
+            top: 0;
+            transform: translateX(-14px) translateY(0);
+        }     
+
     }
 
     &__ellipse {
@@ -80,6 +101,10 @@
     line-height: 30px;
     font-weight: 700;
     color: $main-color;
+
+    @include _768 {
+        margin: auto;
+    }
 }
 
 .navigation {
@@ -89,11 +114,21 @@
         display: flex;
         padding: 0;
         margin-block-start: 0px;
-        margin-block-end: 0px; 
+        margin-block-end: 0px;
+
+        @include _768 {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__item:not(:last-child) {
         margin-right: 28px;
+ 
+        @include _768 {
+            margin-right: 0;
+            margin-bottom: 15px;
+        } 
     }
 
     &__link {
@@ -115,6 +150,10 @@
     flex-direction: column;
     text-align: right;
 
+    @include _768 {
+        text-align: center;
+    }
+
     &__number {
         font-size: 18px;
         line-height: 14px;
@@ -133,6 +172,11 @@
 
 .hero {
 	max-width: 540px;
+
+    @include _768 {
+        max-width: 100%;
+    }     
+
 
     &__title {
         font-size: 48px;
@@ -173,27 +217,42 @@
         padding: 17px 30px;
     }
 
+    &_xlarge {
+        max-width: 375px;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 24px;
+        padding: 17px 145.5px;       
+    }
+
     &:hover {
         color: $link-hover-color;    
     }
 }
 
 .social {
+    
     display: flex;
     list-style: none;
-
-    &_vertical {
-        flex-direction: column;   
-    }
+    padding: 0 0;
+    margin: 0 0;
 
     &__item {
         max-height: 28px;
         max-width: 28px;
     }
-
-    &__item:not(:last-child) {
-        margin-bottom: 20px;
     
+    &__item:not(:last-child) {
+        margin-right: 28px;      
+    }
+
+    &_vertical {
+        flex-direction: column;
+        
+        &>.social__item:not(:last-child) {
+            margin-bottom: 20px;
+            margin-right: 0px;
+        }
     }
 
     &__link {
@@ -206,10 +265,16 @@
     height: 472px;
     border-radius: 50%;
     background-color: #FB9475;
+
+    @include _768 {
+        display: none;
+    }    
 }
 
 .girl {
-
+    @include _768 {
+        display: none;
+    } 
 }
 
 
@@ -225,6 +290,10 @@
     &_bg-light-grey {
         background-clip: content-box;
         background-color: #F8F6F7;
+    }
+
+    &_paddings-0 {
+        padding: 0 0;
     }
 
     &__container {
@@ -345,7 +414,11 @@
         &_right {
 
         }
-    }  
+    }
+
+    &__contacts {
+
+    }
 
 }
 
@@ -614,7 +687,7 @@
     
     &__header {
         position: relative;	
-         font-size: 18px;
+        font-size: 18px;
         font-weight: 500;
         line-height: 22px;
         margin-block-start: 0px;
@@ -623,7 +696,7 @@
 
     &__text {
         position: relative;	
-         font-size: 14px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 17px;
         margin-block-start: 0px;
@@ -632,7 +705,7 @@
 
     &__price {
         position: absolute;	
-         font-size: 20px;
+        font-size: 20px;
         font-weight: 600;
         line-height: 24px;
         margin-block-start: 0px;
@@ -694,6 +767,123 @@
         z-index: 3;
     }
 
+
+}
+
+.contacts {
+    display: flex;
+    max-width: 1015px;
+    justify-content: space-between;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    &__form {
+
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 58px;
+        margin-block-start: 38px;
+        margin-block-end: 32px;	
+    }
+
+    &__address {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-block-start: 0px;
+        margin-block-end: 20px;	
+    }
+
+    &__number {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 14px;
+        margin-block-start: 0px;
+        margin-block-end: 20px;	
+        color: $main-color;
+    }
+
+    &__link {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-block-start: 0px;
+        margin-block-end: 32px;	
+        text-decoration-line: underline;
+        color: #278AFF;
+   }
+
+   &__social-title {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-block-start: 0px;
+    margin-block-end: 14px;	
+}
+
+}
+
+.form {
+    position: relative;
+    padding: 40px 35px;
+    background-color: #FFFFFF;
+    max-width: 445px;
+    height: 406px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #d9d9d9;
+
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 14px;
+        margin-block-start: 0px;
+        margin-block-end: 15px;	
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-block-start: 0px;
+        margin-block-end: 35px;
+    }
+
+    &__name {
+        width: 100%;
+        height: 44px;
+        border-radius: 4px;
+        border: 1px solid #D8D8D8;
+        box-sizing: border-box;
+    }
+
+    &__tel {
+        width: 100%;
+        height: 44px;
+        border-radius: 4px;
+        border: 1px solid #D8D8D8;
+        box-sizing: border-box;
+    }
+
+    &__footer {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 15px;
+        margin-block-start: 16px;
+        margin-block-end: 0px;
+    }
+
+    &__link {
+        text-decoration-line: underline;
+        color: #278AFF;
+    }
 
 }
 
