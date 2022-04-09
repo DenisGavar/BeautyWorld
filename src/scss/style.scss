@@ -54,6 +54,10 @@
     &__nav {
         padding: 0;
         margin: 0;
+
+        @include _768 {
+            display: none;
+        }     
     }
 
     &__phone {
@@ -93,6 +97,71 @@
         right: 93px;
     }
 
+    &__hamb {
+        display: none;
+        
+        @include _768 {
+            display: block;
+            position: relative;
+            top: 0px;
+            left: 0px;    
+        }
+    }
+
+}
+
+.hamb {
+
+    &__button {
+        border: none;
+        cursor: pointer;
+        background: none;
+    }
+
+    &__line {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 3px;
+        
+        &_open {
+            background: #cdcdcd;
+        }
+
+        &_close {
+            background: #232323;
+            margin: 0 0;
+        }
+ 
+        &_45 {
+            transform-origin: 0% 100%;
+            transform: rotate(45deg) translate(4px, 0px);
+        }
+
+        &_-45 {
+            transform-origin: 100% 0%;
+            transform: rotate(-45deg) translate(-5px, -5px);
+        }
+    }
+
+    &__menu {
+        background-color: white; 
+        position: fixed; 
+        left: 0; 
+        right: 0; 
+        top: 0; 
+        bottom: 0; 
+        overflow: auto; 
+        transition: .15s; 
+        transform: translateX(-100%); 
+
+        &_visible {
+            transform: translateX(0);
+            z-index: 5;           
+        }
+    }
 }
 
 .logo {

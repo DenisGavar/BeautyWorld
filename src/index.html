@@ -20,11 +20,29 @@
 			<div class="container header__container">
 
 				<!-- #mobile-menu-btn для обращения к кнопке из JS -->
-				<!--
-				<button id="mobile-menu-btn" class="hamb header__hamb">
-				  <div class="hamb__inner"></div>
-				</button>
-				-->
+				<div class="hamb header__hamb">
+					<button id="hambBtnOpen" class="hamb__button">
+						<span class="hamb__line hamb__line_open"></span>
+						<span class="hamb__line hamb__line_open"></span>
+						<span class="hamb__line hamb__line_open"></span>
+					</button>
+
+					<div id="mobileMenu" class="hamb__menu"> 
+						<ul class="navigation__list">
+							<li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
+							<li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
+							<li class="navigation__item"><a href="#portfolio" class="navigation__link">Наши работы</a></li>
+							<li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+							<li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
+						</ul>
+
+						<button id="hambBtnClose" class="hamb__button">
+							<span class="hamb__line hamb__line_close hamb__line_45"></span>
+							<span class="hamb__line hamb__line_close hamb__line_-45"></span>
+						</button> 
+					</div>
+
+				</div>
 
                 <!-- TODO: девушку и круг на задний фон -->				
                 <!-- TODO: сделать анимацию кнопок социальных сетей -->                
@@ -112,7 +130,6 @@
 				</div>
 			</section>		
 
-
 			<!-- Преимущества -->
 			<section class="section">
 				<div class="container section__container">
@@ -186,168 +203,6 @@
 
 				</div>
 			</section>		
-
-			<!-- Услуги и цены
-			<section id="price" class="section">
-				<div class="container section__container">
-
-					<div class="section__header">
-						<h2 class="section__title">Услуги и цены</h2>
-					</div>
-
-					<div class="section__inner">
-						
-						<div class="tabs">
-
-							<input class="tabs__tab-input" type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
-							<label class="tabs__tab-name" for="tab-btn-1">Стрижка и укладка</label>
-							<input class="tabs__tab-input" type="radio" name="tab-btn" id="tab-btn-2" value="">
-							<label class="tabs__tab-name" for="tab-btn-2">Косметология</label>
-							<input class="tabs__tab-input" type="radio" name="tab-btn" id="tab-btn-3" value="">
-							<label class="tabs__tab-name" for="tab-btn-3">Маникюр и педикюр</label>
-							<input class="tabs__tab-input" type="radio" name="tab-btn" id="tab-btn-4" value="">
-							<label class="tabs__tab-name" for="tab-btn-4">Макияж</label>
-							<input class="tabs__tab-input" type="radio" name="tab-btn" id="tab-btn-5" value="">
-							<label class="tabs__tab-name" for="tab-btn-5">Брови и ресницы</label>
-							<input class="tabs__tab-input" type="radio" name="tab-btn" id="tab-btn-6" value="">
-							<label class="tabs__tab-name" for="tab-btn-6">Массаж</label>
-	
-	
-							<div id="content-1" class="tabs__box">
-								<div class="tabs__line">
-									<p class="tabs__header">Женская стрижка</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Стрижка бороды и усов</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Мужская стрижка</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Экспресс укладка</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Детский Стиль</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Укладка дневная</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Креативный Стиль</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Прическа вечерняя (свадебная)</p>
-									<p class="tabs__text">Короткие волосы</p>
-									<p class="tabs__price">3000 ₽</p>
-								</div>
-							</div>
-							<div id="content-2" class="tabs__box">
-								<div class="tabs__line">
-									<p class="tabs__header">Чистка лица</p>
-									<p class="tabs__text">Механическая</p>
-									<p class="tabs__price">1500 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Чистка лица</p>
-									<p class="tabs__text">Ультразвуковая</p>
-									<p class="tabs__price">1600 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Чистка лица</p>
-									<p class="tabs__text">Комбинированная</p>
-									<p class="tabs__price">1700 ₽</p>
-								</div>						
-							</div>
-							<div id="content-3" class="tabs__box">
-								<div class="tabs__line">
-									<p class="tabs__header">Маникюр</p>
-									<p class="tabs__text">Французский</p>
-									<p class="tabs__price">2000 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Маникюр</p>
-									<p class="tabs__text">Большого пальца</p>
-									<p class="tabs__price">500 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Педикюр</p>
-									<p class="tabs__text">Аппаратный</p>
-									<p class="tabs__price">1500 ₽</p>
-								</div>						
-							</div>
-							<div id="content-4" class="tabs__box">
-								<div class="tabs__line">
-									<p class="tabs__header">Макияж</p>
-									<p class="tabs__text">Вечерний</p>
-									<p class="tabs__price">2000 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Макияж</p>
-									<p class="tabs__text">Свадебный</p>
-									<p class="tabs__price">3000 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Снятие макияжа</p>
-									<p class="tabs__text">Очистка лица</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>								
-							</div>
-							<div id="content-5" class="tabs__box">
-								<div class="tabs__line">
-									<p class="tabs__header">Ресницы</p>
-									<p class="tabs__text">2D</p>
-									<p class="tabs__price">1500 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Ресницы</p>
-									<p class="tabs__text">3D</p>
-									<p class="tabs__price">2000 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Брови</p>
-									<p class="tabs__text">Покраска</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>								
-							</div>
-							<div id="content-6" class="tabs__box">
-								<div class="tabs__line">
-									<p class="tabs__header">Массаж</p>
-									<p class="tabs__text">Полный</p>
-									<p class="tabs__price">3000 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Массаж</p>
-									<p class="tabs__text">Тайский</p>
-									<p class="tabs__price">2500 ₽</p>
-								</div>
-								<div class="tabs__line">
-									<p class="tabs__header">Массаж</p>
-									<p class="tabs__text">Ноги</p>
-									<p class="tabs__price">1200 ₽</p>
-								</div>							
-							</div>
-							
-						</div>					
-
-					</div>
-
-				</div>
-			</section>
- 			-->
 
 			<!-- Услуги и цены -->
 			<section id="price" class="section">
@@ -508,8 +363,7 @@
 
 				</div>
 			</section>		
-
-		
+	
 			<!-- Мастера -->
 			<section id="masters" class="section section_bg-light-grey">
 				<div class="container section__container section__container_top-bottom-paddings-80">
@@ -716,7 +570,7 @@
     </div>
 
 	<script src="./js/signUp.js"></script>
-	<script src="./js/tabs.js"></script>
+	<script src="./js/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
