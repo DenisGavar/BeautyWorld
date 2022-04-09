@@ -649,15 +649,21 @@
 
 .tabs {
 
-    &__tab-input {
-        display: none;  
+    &__links {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+
+        .active {
+            color: $link-hover-color;
+            cursor: default;
+            border-bottom: 2px solid $link-hover-color; 
+        }
     }
 
     &__tab-name {
-        display: inline-block;
-        text-align: center;
-        vertical-align: middle;
-        user-select: none;
         transition: color 0.15s ease-in-out;
         cursor: pointer;
         font-size: 14px;
@@ -665,18 +671,19 @@
         line-height: 17px; 
     }
 
-    &>.tabs__tab-name:not(:last-of-type) {
+    &__tab-name:not(:last-child) {
         margin-right: 28px;
     }
 
-    &__tab-input:checked+.tabs__tab-name {
-        color: $link-hover-color;
-        cursor: default;
-    }
-
-    &__box {
+    &__item {
         display: none;
         padding-top: 50px;
+
+        &.active { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px 126px;
+        }
     }
 
     &__line {
@@ -714,17 +721,6 @@
         top: 0px;
         right: 1px;
     }
-}
-
-#tab-btn-1:checked~#content-1,
-#tab-btn-2:checked~#content-2,
-#tab-btn-3:checked~#content-3,
-#tab-btn-4:checked~#content-4,
-#tab-btn-5:checked~#content-5,
-#tab-btn-6:checked~#content-6 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 36px 126px;		
 }
 
 .slider {
@@ -773,8 +769,6 @@
         }      
     }
 }
-
-
 
 .contacts {
     display: flex;
