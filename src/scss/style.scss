@@ -405,6 +405,10 @@
         margin-block-start: 0px;
         margin-block-end: 32px;
 
+        @include _768 {
+            text-align: center;
+        }
+
         &_margin-block-end-52 {
             margin-block-end: 52px;          
         }
@@ -425,7 +429,11 @@
         font-weight: 400;
         line-height: 20px;
         margin-block-start: 0px;
-        margin-block-end: 24px;    
+        margin-block-end: 24px;
+        
+        @include _768 {
+            text-align: center;
+        }
     }
 
     &__inner {
@@ -435,7 +443,14 @@
             display: flex;
             justify-content: space-between;
             row-gap: 48px;
-            flex-wrap: wrap;    
+            flex-wrap: wrap;
+            
+            @include _768 {
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 0;
+                align-items: center;
+            }
         }
 
         &_flex-start {
@@ -493,6 +508,15 @@
 
 .about-inner {
 
+    @include _768 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
+
     &__text {
         max-width: 540px;
         position: relative;
@@ -530,6 +554,10 @@
         cursor: pointer;
         object-fit: cover;
         padding: 0;
+
+        @include _768 {
+            position: relative;
+        }
 
         &:before {
             content: '';
@@ -737,7 +765,8 @@
         cursor: pointer;
         font-size: 14px;
         font-weight: 500;
-        line-height: 17px; 
+        line-height: 17px;
+        text-align: center; 
     }
 
     &__tab-name:not(:last-child) {
@@ -752,6 +781,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 36px 126px;
+
+            @include _768 {
+                justify-content: center;
+            }   
         }
     }
 
@@ -971,6 +1004,13 @@
         font-weight: 400;
         line-height: 15px;
         align-items: center;
+
+        @include _768 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }        
     }
 }
 
