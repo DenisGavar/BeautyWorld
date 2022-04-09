@@ -727,48 +727,54 @@
     gap: 36px 126px;		
 }
 
-.img-increase {
-	position: relative;
-	max-width: 338px;
-    height: 338px;
-    object-fit: cover;   
-    border-radius: 8px;
-    line-height: 0;
-    transition: 0.15s; 
-    cursor: pointer;  
+.slider {
 
-    &:hover {
-        transform: scale(1.1);    
+    &__item {
+
+        margin: 15px;
+
+        img {
+            width: 100%;
+        } 
+               
+        &:hover {
+            transform: scale(1.1);    
+        }
+         
+        &:hover:before {
+            content: "Увеличить";
+            position: absolute;
+            text-align: center;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17px;
+            color: #fff;
+            z-index: 3;
+        }
+
+        // Если добавлять псевдоэлемент after, то данный элемент появляется поверх картинки
+        // и перестаёт работать fancybox, что логично, т.к. данный элемент перекрывает кликабельную картинку
+        // Пока не придумал как это обойти
+        &:hover:after {
+            /*
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            background: #000 url('../images/search.png') no-repeat center;
+            opacity: 0.5;
+            */
+        }      
     }
-
-    &:hover:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        background: #000 url('../images/search.png') no-repeat center;
-        opacity: 0.5;    
-    }
-
-    &:hover:before {
-        content: "Увеличить";
-        position: absolute;
-        text-align: center;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 17px;
-        color: #fff;
-        z-index: 3;
-    }
-
-
 }
+
+
 
 .contacts {
     display: flex;
