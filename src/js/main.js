@@ -53,9 +53,11 @@ class TabsManager {
 } 
   
 window.onload = function() { 
+    // Работа с табами
     const tabsElem = document.getElementById('myTabs'); 
     new TabsManager(tabsElem);
     
+    // Мобильное меню
     hambBtnOpen.addEventListener('click', () => { 
         mobileMenu.classList.add('hamb__menu_visible'); 
     }); 
@@ -71,4 +73,22 @@ window.onload = function() {
             mobileMenu.classList.remove('hamb__menu_visible'); 
         });
     };
+
+    // Плавный скролл
+    document.addEventListener('scroll', event => { 
+        console.log(event.target.scrollTop) 
+    }); 
+
+    const smoothScrollLinks = document.querySelectorAll('.navigation__link'); 
+
+    for (let link of smoothScrollLinks) { 
+        link.addEventListener('click', event => { 
+            event.preventDefault(); 
+
+            const target = event.target; 
+            const elementToScroll = document.querySelector(target.getAttribute('href')); 
+            elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'end'}); 
+        }); 
+    } 
+    
 }
