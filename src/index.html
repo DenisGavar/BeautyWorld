@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     
@@ -26,7 +25,7 @@
 
                 <!-- TODO: девушку и круг на задний фон -->				
                 <!-- TODO: сделать анимацию кнопок социальных сетей -->                
-
+				
 				<div class="header__top">
 					<a href="/" class="logo header__logo">Мир красоты</a>
 
@@ -45,12 +44,6 @@
 						<time class="header-phone__schedule">с 10.00 до 19.00 без выходных</time>
 					</div>
 				</div>
-
-                <div class="hero header__hero">
-                    <h1 class="hero__title">Создай свой образ вместе с нами</h1>
-                    <p class="hero__subtitle">Идеальный образ за 60 минут</p>
-                    <button data-fancybox data-src="#request" class="btn btn_large">Записаться онлайн</button>
-                </div>
 
                 <ul class="social social_vertical header__social">
                     <li class="social__item">
@@ -71,6 +64,12 @@
                         </a>
                     </li>
                 </ul>
+
+                <div class="hero header__hero">
+                    <h1 class="hero__title">Создай свой образ вместе с нами</h1>
+                    <p class="hero__subtitle">Идеальный образ за 60 минут</p>
+                    <button data-fancybox data-src="#request" class="btn btn_large">Записаться онлайн</button>
+                </div>
 
 				<div class="ellipse header__ellipse"></div>
 				
@@ -104,7 +103,6 @@
 							<div class="about-inner__video-overlay"></div>
 							<img class="about-inner__video-img" src="./images/video-preview.png" alt="video"></img>
 						</button>
-
 
 					</div>
 
@@ -400,19 +398,114 @@
 
 			<!-- Наши работы -->
 			<section id="portfolio" class="section">
-				<div class="container section__container">
+				<div class="container section__container section__container_max-width-1440">
 
-					<div class="section__header">
-						<h2 class="section__title">Наши работы</h2>
+					<div class="section__header section__header_max-width-1110 section__header_flex">
+						<h2 class="section__title section__title_margin-block-end-52">Наши работы</h2>
+						<div class="section__buttons">
+							<button class="section__button section__button_left"><img src="./images/arrow-left.png" alt="left"></button>
+							<button class="section__button section__button_right"><img src="./images/arrow-right.png" alt="right"></button>	
+						</div>
 					</div>
 
-					<div class="section__inner">
+					<div class="section__inner section__inner_flex">
+
+						<div class="img-increase">
+							<img src="./images/work-1.png" alt="our work">
+						</div>
+
+						<div class="img-increase">
+							<img src="./images/work-2.png" alt="our work">
+						</div>
+
+						<div class="img-increase">
+							<img src="./images/work-3.png" alt="our work">
+						</div>
+
+						<div class="img-increase">
+							<img src="./images/work-4.png" alt="our work">
+						</div>
 
 					</div>
 
 				</div>
-			</section>		
+			</section>
+
+			<!-- Бренды -->
+			<section class="section">
+				<div class="container section__container">
+
+					<div class="section__header section__header_text-align">
+						<h2 class="section__title section__title_margin-block-end-40 section__title_small">Бренды, которые мы используем в работе</h2>
+					</div>
+
+					<div class="section__inner section__inner_flex section__inner_center section__inner_column-gap-30 section__inner_opacity-35">
+						<img src="./images/brand-wella.png" alt="brand-wella">
+						<img src="./images/brand-schwarzkopf.png" alt="brand-schwarzkopf">
+						<img src="./images/brand-tigi.png" alt="brand-tigi">
+						<img src="./images/brand-londa.png" alt="brand-londa">
+						<img src="./images/brand-nioxin.png" alt="brand-nioxin">
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Контакты -->
+			<section id="contacts" class="section section_bg-light-grey section_paddings-0">
+				<div class="container section__container section__container_top-bottom-paddings-40">
+
+					<div class="section__inner">
+						<div class="contacts section__contacts">
+							<div class="contacts__info">
+								<h2 class="contacts__title">Контакты</h2>
+								<address class="contacts__address">Томск, проспект Ленина, дом 13</address>
+								<a href="tel:84996861762" class="contacts__number">8 (499) 686-17-62</a>
+								<a href="mailto:info@more-krasoty.ru" class="contacts__link">info@more-krasoty.ru</a>
+								<p class="contacts__social-title">Мы в социальных сетях</p>
+								
+								<ul class="social">
+									<li class="social__item">
+										<a href="#" class="social__link">
+											<img src="./images/vk-icon.png" alt="Vk">
+										</a>
+									</li>
+				
+									<li class="social__item">
+										<a href="#" class="social__link">
+											<img src="./images/instagram-icon.png" alt="Instagram">
+										</a>
+									</li>
+				
+									<li class="social__item">
+										<a href="#" class="social__link">
+											<img src="./images/youtube-icon.png" alt="Youtube">
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<form class="form contacts__form">
+								<p class="form__title">Быстрая запись</p>
+								<p class="form__subtitle">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.</p>
+								<p>
+									<!-- TODO: pattern -->
+									<input type="text" class="form__name" placeholder="Ваше имя" />
+								</p>
+								<p>
+									<!-- TODO: pattern -->
+									<input type="tel" class="form__tel" placeholder="+7 (___) ___-__-__" />
+								</p>
+								<button class="btn btn_xlarge">Записаться</button>
+								<p class="form__footer">Нажимая на кнопку вы соглашаетесь с
+									<a href="#" class="form__link">обработкой персональных данных</a>
+								</p>
+							</form>
 			
+						</div>
+					</div>
+
+				</div>
+			</section>
 
         </main>
 
