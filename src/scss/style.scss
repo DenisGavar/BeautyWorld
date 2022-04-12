@@ -20,7 +20,6 @@
     margin-bottom: 100px;
     	
 	background-position: center;
-	/*background-repeat: no-repeat;*/
     background-size: auto contain;
 
     &__container {
@@ -47,17 +46,13 @@
         } 
     }
 
-    &__logo {
-
-    }
-
     &__nav {
         padding: 0;
         margin: 0;
-    }
 
-    &__phone {
-
+        @include _768 {
+            display: none;
+        }     
     }
 
     &__hero {
@@ -93,10 +88,75 @@
         right: 93px;
     }
 
+    &__hamb {
+        display: none;
+        
+        @include _768 {
+            display: block;
+            position: relative;
+            top: 0px;
+            left: 0px;    
+        }
+    }
+
+}
+
+.hamb {
+
+    &__button {
+        border: none;
+        cursor: pointer;
+        background: none;
+    }
+
+    &__line {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 3px;
+        
+        &_open {
+            background: #cdcdcd;
+        }
+
+        &_close {
+            background: #232323;
+            margin: 0 0;
+        }
+ 
+        &_45 {
+            transform-origin: 0% 100%;
+            transform: rotate(45deg) translate(4px, 0px);
+        }
+
+        &_-45 {
+            transform-origin: 100% 0%;
+            transform: rotate(-45deg) translate(-5px, -5px);
+        }
+    }
+
+    &__menu {
+        background-color: white; 
+        position: fixed; 
+        left: 0; 
+        right: 0; 
+        top: 0; 
+        bottom: 0; 
+        overflow: auto; 
+        transition: .15s; 
+        transform: translateX(-100%); 
+
+        &_visible {
+            transform: translateX(0);
+            z-index: 5;           
+        }
+    }
 }
 
 .logo {
-    display: inline-block; /*перенести в класс header__logo? */
+    display: inline-block;
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
@@ -255,9 +315,6 @@
         }
     }
 
-    &__link {
-
-    }
 }
 
 .ellipse {
@@ -336,6 +393,10 @@
         margin-block-start: 0px;
         margin-block-end: 32px;
 
+        @include _768 {
+            text-align: center;
+        }
+
         &_margin-block-end-52 {
             margin-block-end: 52px;          
         }
@@ -356,7 +417,11 @@
         font-weight: 400;
         line-height: 20px;
         margin-block-start: 0px;
-        margin-block-end: 24px;    
+        margin-block-end: 24px;
+        
+        @include _768 {
+            text-align: center;
+        }
     }
 
     &__inner {
@@ -366,7 +431,14 @@
             display: flex;
             justify-content: space-between;
             row-gap: 48px;
-            flex-wrap: wrap;    
+            flex-wrap: wrap;
+            
+            @include _768 {
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 0;
+                align-items: center;
+            }
         }
 
         &_flex-start {
@@ -402,27 +474,27 @@
         cursor: pointer;
         transition: .15s;
         background-color: #FFFFFF; 
-    
+        overflow: hidden;
+        object-fit: cover;
+
         &:hover {
             background-color: #F8F6F7;    
         } 
-
-        &_left {
-
-        }
-
-        &_right {
-
-        }
-    }
-
-    &__contacts {
 
     }
 
 }
 
 .about-inner {
+
+    @include _768 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
 
     &__text {
         max-width: 540px;
@@ -461,6 +533,10 @@
         cursor: pointer;
         object-fit: cover;
         padding: 0;
+
+        @include _768 {
+            position: relative;
+        }
 
         &:before {
             content: '';
@@ -521,7 +597,7 @@
 	max-width: 350px;
     height: 100%;
     flex: 1 1 auto;
-    /*overflow: hidden;*/
+    overflow: hidden;
     object-fit: cover;
 
     &_center {
@@ -649,34 +725,46 @@
 
 .tabs {
 
-    &__tab-input {
-        display: none;  
+    &__links {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+
+        .active {
+            color: $link-hover-color;
+            cursor: default;
+            border-bottom: 2px solid $link-hover-color; 
+        }
     }
 
     &__tab-name {
-        display: inline-block;
-        text-align: center;
-        vertical-align: middle;
-        user-select: none;
         transition: color 0.15s ease-in-out;
         cursor: pointer;
         font-size: 14px;
         font-weight: 500;
-        line-height: 17px; 
+        line-height: 17px;
+        text-align: center; 
     }
 
-    &>.tabs__tab-name:not(:last-of-type) {
+    &__tab-name:not(:last-child) {
         margin-right: 28px;
     }
 
-    &__tab-input:checked+.tabs__tab-name {
-        color: $link-hover-color;
-        cursor: default;
-    }
-
-    &__box {
+    &__item {
         display: none;
         padding-top: 50px;
+
+        &.active { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px 126px;
+
+            @include _768 {
+                justify-content: center;
+            }   
+        }
     }
 
     &__line {
@@ -716,58 +804,53 @@
     }
 }
 
-#tab-btn-1:checked~#content-1,
-#tab-btn-2:checked~#content-2,
-#tab-btn-3:checked~#content-3,
-#tab-btn-4:checked~#content-4,
-#tab-btn-5:checked~#content-5,
-#tab-btn-6:checked~#content-6 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 36px 126px;		
-}
+.slider {
 
-.img-increase {
-	position: relative;
-	max-width: 338px;
-    height: 338px;
-    object-fit: cover;   
-    border-radius: 8px;
-    line-height: 0;
-    transition: 0.15s; 
-    cursor: pointer;  
+    &__item {
 
-    &:hover {
-        transform: scale(1.1);    
+        margin: 15px;
+        overflow: hidden;
+        object-fit: cover;
+
+        img {
+            width: 100%;
+        } 
+               
+        &:hover {
+            transform: scale(1.1);    
+        }
+         
+        &:hover:before {
+            content: "Увеличить";
+            position: absolute;
+            text-align: center;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17px;
+            color: #fff;
+            z-index: 3;
+        }
+
+        // Если добавлять псевдоэлемент after, то данный элемент появляется поверх картинки
+        // и перестаёт работать fancybox, что логично, т.к. данный элемент перекрывает кликабельную картинку
+        // Пока не придумал как это обойти
+        &:hover:after {
+            /*
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            background: #000 url('../images/search.png') no-repeat center;
+            opacity: 0.5;
+            */
+        }      
     }
-
-    &:hover:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        background: #000 url('../images/search.png') no-repeat center;
-        opacity: 0.5;    
-    }
-
-    &:hover:before {
-        content: "Увеличить";
-        position: absolute;
-        text-align: center;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 17px;
-        color: #fff;
-        z-index: 3;
-    }
-
-
 }
 
 .contacts {
@@ -779,10 +862,6 @@
         display: flex;
         flex-direction: column;
         text-align: left;
-    }
-
-    &__form {
-
     }
 
     &__title {
@@ -902,14 +981,17 @@
         font-weight: 400;
         line-height: 15px;
         align-items: center;
+
+        @include _768 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }        
     }
 }
 
 .copyright {
-
-    &.copyright__text {
-        
-    }
 
     &__link {
         text-decoration-line: underline;
@@ -917,6 +999,5 @@
     }
 
 }
-
 
 @import './media';
