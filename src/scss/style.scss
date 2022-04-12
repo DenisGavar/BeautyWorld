@@ -20,7 +20,6 @@
     margin-bottom: 100px;
     	
 	background-position: center;
-	/*background-repeat: no-repeat;*/
     background-size: auto contain;
 
     &__container {
@@ -47,10 +46,6 @@
         } 
     }
 
-    &__logo {
-
-    }
-
     &__nav {
         padding: 0;
         margin: 0;
@@ -58,10 +53,6 @@
         @include _768 {
             display: none;
         }     
-    }
-
-    &__phone {
-
     }
 
     &__hero {
@@ -165,7 +156,7 @@
 }
 
 .logo {
-    display: inline-block; /*перенести в класс header__logo? */
+    display: inline-block;
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
@@ -324,9 +315,6 @@
         }
     }
 
-    &__link {
-
-    }
 }
 
 .ellipse {
@@ -486,21 +474,12 @@
         cursor: pointer;
         transition: .15s;
         background-color: #FFFFFF; 
-    
+        overflow: hidden;
+        object-fit: cover;
+
         &:hover {
             background-color: #F8F6F7;    
         } 
-
-        &_left {
-
-        }
-
-        &_right {
-
-        }
-    }
-
-    &__contacts {
 
     }
 
@@ -618,7 +597,7 @@
 	max-width: 350px;
     height: 100%;
     flex: 1 1 auto;
-    /*overflow: hidden;*/
+    overflow: hidden;
     object-fit: cover;
 
     &_center {
@@ -830,6 +809,8 @@
     &__item {
 
         margin: 15px;
+        overflow: hidden;
+        object-fit: cover;
 
         img {
             width: 100%;
@@ -881,10 +862,6 @@
         display: flex;
         flex-direction: column;
         text-align: left;
-    }
-
-    &__form {
-
     }
 
     &__title {
@@ -1016,16 +993,11 @@
 
 .copyright {
 
-    &.copyright__text {
-        
-    }
-
     &__link {
         text-decoration-line: underline;
         color: #278AFF;
     }
 
 }
-
 
 @import './media';
