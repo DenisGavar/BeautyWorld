@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { OrderForm } from './forms/order-form';
 
 function init() {
     $('.slider').slick({
@@ -6,6 +7,8 @@ function init() {
         prevArrow: '.section__button_left',
         nextArrow: '.section__button_right'
     });
+   
+    new OrderForm();
 }
 
 class TabItem { 
@@ -101,6 +104,10 @@ window.onload = function() {
         }); 
     } 
 
-    $(document).ready(init);    
+    $(document).ready(init);
+    
+    $(document).ready(function(){
+        Inputmask().mask(document.querySelectorAll("input"));
+    });
 }
 

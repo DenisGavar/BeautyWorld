@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/DenisGavar/BeautyWorld#readme",
   "dependencies": {
+    "inputmask": "^5.0.7",
     "normalize.css": "^8.0.1",
     "slick-carousel": "^1.8.1"
   },
