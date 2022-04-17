@@ -518,18 +518,18 @@
 								</ul>
 							</div>
 
-							<form class="form contacts__form" id="signUpForm">
+							<form class="form contacts__form" id="order-form-mini">
 								<p class="form__title">Быстрая запись</p>
 								<p class="form__subtitle">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.</p>
 								<p>
 									<!-- TODO: pattern -->
-									<input type="text" class="form__name" placeholder="Ваше имя" required id="signUpName" />
+									<input type="text" class="form__name" placeholder="Ваше имя" name="name" required />
 								</p>
 								<p>
 									<!-- TODO: pattern -->
-									<input type="tel" class="form__tel" placeholder="+7 (___) ___-__-__" inputmode="tel" id="signUpPhone" />
+									<input type="tel" class="form__tel" data-inputmask="'mask': '+7 (999) 999-99-99'" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" required />
 								</p>
-								<button class="btn btn_xlarge" type="submit">Записаться</button>
+								<button class="btn btn_xlarge">Записаться</button>
 								<p class="form__footer">Нажимая на кнопку вы соглашаетесь с
 									<a href="#" target="_blank" class="form__link">обработкой персональных данных</a>
 								</p>
@@ -542,15 +542,15 @@
 			</section>
 
 			<!-- Модальная форма записи --> 
-			<form class="form" id="order-form">
+			<form class="form form_modal" id="order-form">
 				<div class="form__control">
 					<label>Ваше имя:</label>
-					<input type="text" name="name" required>
+					<input class="form__input" type="text" name="name" required>
 				</div>
 
 				<div class="form__control">
 					<label>Номер телефона:</label>
-					<input data-inputmask="'mask': '+7 (999) 999-99-99'" type="tel" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
+					<input class="form__input" data-inputmask="'mask': '+7 (999) 999-99-99'" type="tel" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
 				</div>
 
 				<div class="form__control">
@@ -574,7 +574,15 @@
 					<input type="date" name="visitDate">
 				</div>
 
-				<button>Записаться</button>
+				<button><span class="submit-spinner submit-spinner_hide"></span> Записаться</button>
+
+				<div class="form__message" id="success" hidden>
+					<p>Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.</p>
+				</div>
+
+				<div class="form__message" id="unsuccess" hidden>
+					<p>При отправке заявки произошла ошибка. Попробуйте ещё раз позднее.</p>
+				</div>
 			</form>
 
 

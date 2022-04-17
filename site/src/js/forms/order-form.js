@@ -18,7 +18,8 @@ export class OrderForm {
         this.mastersSelect = this.formEl.elements.masterId;
         this.servicesSelect = this.formEl.elements.serviceId;
         this.visitDateInput = this.formEl.elements.visitDate;
-       // добавить объект лоадера (сначала в index.html, тут меняем видимость? надо посмотреть урок)
+        this.success = this.formEl.elements.success;
+        this.unsuccess = this.formEl.elements.unsuccess;
 
         this._init();
         this._bindEvents();
@@ -30,7 +31,7 @@ export class OrderForm {
     }
 
     _bindEvents() {
-        this.formEl.addEventListener('submit', event => {
+        this.formEl.addEventListener('submit', async event => {
             event.preventDefault();
  
             const name = this.nameInput.value;
@@ -40,8 +41,22 @@ export class OrderForm {
             const visitDate = this.visitDateInput.value;
 
             const data = new Customer(name, phone, masterId, serviceId, visitDate);
-            console.log(data);           
-            ApiService.createOrder(data);
+
+            try {               
+                unsuccess.hidden = true;
+                document.querySelector('.submit-spinner').classList.remove('submit-spinner_hide');
+                const submitReturn = await ApiService.createOrder(data);
+                success.hidden = false;
+ 
+                setTimeout(() => {
+                    $.fancybox.close();
+                    success.hidden = true;
+                }, 3000);
+            } catch(e) {
+                unsuccess.hidden = false;
+            } finally {
+                document.querySelector('.submit-spinner').classList.add('submit-spinner_hide');
+            }
         });
     }
 

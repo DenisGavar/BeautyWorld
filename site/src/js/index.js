@@ -5,4 +5,3 @@ import '@fancyapps/fancybox/dist/jquery.fancybox.min'
 import 'inputmask/dist/inputmask.min';
 
 import './main'
-import './signUp'
