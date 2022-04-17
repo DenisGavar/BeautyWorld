@@ -46,6 +46,7 @@ export class OrderForm {
                 unsuccess.hidden = true;
                 document.querySelector('.submit-spinner').classList.remove('submit-spinner_hide');
                 const submitReturn = await ApiService.createOrder(data);
+                // Надо проверять ответ, а то может быть ответ с ошибкой, но в catch не попадает
                 success.hidden = false;
  
                 setTimeout(() => {
