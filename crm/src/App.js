@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import {Routes, Route, Link} from "react-router-dom";
+import './style.scss';
 
-function App() {
+import { MastersPage } from './pages/masters'
+import { LoginPage } from './pages/login';
+import { useAuth } from './contexts/AuthContext';
+import { PrivateRoute } from './components';
+import { CustomersApi } from './api';
+
+export default function App() {
+  const { isAuth, logout } = useAuth();
+
+  useEffect(() => {
+    CustomersApi.getCustomers().then(list => console.log(list));  
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+
+      {isAuth && <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/login">Login</Link></li>
+        </ul>
+
+        <button onClick={logout}>Logout</button>
+      </nav>}
+
+      <Routes>
+        <Route path="/" element={
+          <PrivateRoute>
+            <MastersPage />
+          </PrivateRoute>
+        }/>
+
+        <Route path="login" element={<LoginPage />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;
