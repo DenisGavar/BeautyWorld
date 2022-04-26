@@ -1,3 +1,16 @@
+import $ from 'jquery';
+import { OrderForm } from './forms/order-form';
+
+function init() {
+    $('.slider').slick({
+        slidesToShow: 4,
+        prevArrow: '.section__button_left',
+        nextArrow: '.section__button_right'
+    });
+   
+    new OrderForm();
+}
+
 class TabItem { 
     constructor(link, content) { 
         this.link = link; 
@@ -90,5 +103,11 @@ window.onload = function() {
             elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'end'}); 
         }); 
     } 
+
+    $(document).ready(init);
     
+    $(document).ready(function(){
+        Inputmask().mask(document.querySelectorAll("input"));
+    });
 }
+
