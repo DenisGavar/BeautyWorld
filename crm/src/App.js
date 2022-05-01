@@ -3,6 +3,7 @@ import {Routes, Route, Link} from "react-router-dom";
 import './style.scss';
 
 import { MastersPage } from './pages/masters'
+import { OrdersPage } from './pages/orders'
 import { LoginPage } from './pages/login';
 import { useAuth } from './contexts/AuthContext';
 import { PrivateRoute } from './components';
@@ -20,7 +21,8 @@ export default function App() {
 
       {isAuth && <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/masters">Masters</Link></li>
+          <li><Link to="/orders">Orders</Link></li>
           <li><Link to="/login">Login</Link></li>
         </ul>
 
@@ -28,9 +30,15 @@ export default function App() {
       </nav>}
 
       <Routes>
-        <Route path="/" element={
+        <Route path="masters" element={
           <PrivateRoute>
             <MastersPage />
+          </PrivateRoute>
+        }/>
+
+        <Route path="orders" element={
+          <PrivateRoute>
+            <OrdersPage />
           </PrivateRoute>
         }/>
 

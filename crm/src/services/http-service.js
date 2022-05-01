@@ -10,7 +10,7 @@ export class HttpService {
   get baseHeaders() {
     return {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer!!${TokenService.getToken()}`
+      'Authorization': `Bearer ${TokenService.getToken()}`
     }
   }
 
@@ -25,7 +25,7 @@ export class HttpService {
   async post(path = '', body) {
     const stringifiedData = JSON.stringify(body);
 
-    const response = await fetch(`${this.baseApi}/${path}`, {
+    const response = await fetch(`${this.baseApi}${path && '/'}${path}`, {
       method: 'POST',
       body: stringifiedData,
       headers: this.baseHeaders
@@ -35,13 +35,32 @@ export class HttpService {
   }
 
   async postFormData(path = '', body) {
-    const response = await fetch(`${this.baseApi}/${path}`, {
+    const response = await fetch(`${this.baseApi}${path && '/'}${path}`, {
       method: 'POST',
       body,
       headers: {
         ...this.baseHeaders,
         'Content-Type': 'multipart/form-data',
       },
+    });
+
+    return this._handleResponse(response);
+  }
+
+  async delete(path = '') {
+    const response = await fetch(`${this.baseApi}${path && '/'}${path}`, {
+      method: 'DELETE',
+      headers: this.baseHeaders
+    });
+
+    return this._handleResponse(response);
+  }
+  
+  async change(path = '', body) {
+    const response = await fetch(`${this.baseApi}${path && '/'}${path}`, {
+      method: 'PATCH',
+      body,
+      headers: this.baseHeaders
     });
 
     return this._handleResponse(response);

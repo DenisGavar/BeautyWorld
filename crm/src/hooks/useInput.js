@@ -1,12 +1,11 @@
 import { useState } from "react";
 
 export function useInput(defaultValue = null) {
-    // заменил setValue на setvalue
-    const [value, setvalue] = useState(defaultValue);
+    const [value, setValue] = useState(defaultValue);
 
     function onChange(event) {
-        setvalue(event.target.value);
+        setValue(event.target.value);
     }
 
-    return { value, onChange, setvalue };
+    return { value, onChange, setValue };
 }
